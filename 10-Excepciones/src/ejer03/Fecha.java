@@ -1,6 +1,6 @@
 package ejer03;
 
-public class Fecha {
+public class Fecha{
 
 	private int dia;
 	private int mes;
@@ -31,10 +31,14 @@ public class Fecha {
 	 * da a la fecha dia el valor de año si es correcto
 	 * 
 	 * @param dia
+	 * @throws NegativeDiaEx 
 	 */
-	public void setDia(int dia) {
+	public void setDia(int dia) throws NegativeDiaEx {
+		
 		if (dia >= 1 && dia <= 31) {
 			this.dia = dia;
+		}else {
+			throw new NegativeDiaEx();
 		}
 	}
 
@@ -51,10 +55,13 @@ public class Fecha {
 	 * da a la fecha mes el valor de año si es correcto
 	 * 
 	 * @param mes
+	 * @throws NegativeMesEx 
 	 */
-	public void setMes(int mes) {
+	public void setMes(int mes) throws NegativeMesEx {
 		if (mes >= 1 && mes <= 12) {
 			this.mes = mes;
+		}else {
+			throw new NegativeMesEx();
 		}
 	}
 
@@ -71,9 +78,14 @@ public class Fecha {
 	 * da a la fecha año el valor de año si es correcto
 	 * 
 	 * @param año
+	 * @throws NegativeAnoEx 
 	 */
-	public void setAño(int año) {
+	public void setAño(int año) throws NegativeAnoEx {
+		if (año>0) {
 		this.año = año;
+		}else {
+			throw new NegativeAnoEx();
+		}
 	}
 
 	/**
