@@ -40,6 +40,7 @@ public class Funciones {
 
 		} catch (InputMismatchException e) {
 			System.out.println("El valor introducido no es de tipo INT"); // si no es de tipo int salta el error
+			System.out.println(e.getMessage());
 		}
 
 		return res; // devuelve res
